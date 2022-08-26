@@ -30,8 +30,8 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <h1 class="text-3xl font-bold underline">Hello world!</h1> */}
-      {/* <Tasks /> */}
-      <Colores/>
+      <Tasks />
+      {/* <Colores/> */}
     </div>
   )
 }
