@@ -2,6 +2,7 @@ import { useState } from "react"
 import reactLogo from "./assets/react.svg"
 import "./App.css"
 import Tasks from "./components/Tasks"
+import Colores from "./components/Colores"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,7 +30,8 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <h1 class="text-3xl font-bold underline">Hello world!</h1> */}
-      <Tasks />
+      {/* <Tasks /> */}
+      <Colores/>
     </div>
   )
 }
