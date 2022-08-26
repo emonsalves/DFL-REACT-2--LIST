@@ -21,13 +21,16 @@ const Tasks = () => {
   }
 
   const uploadTask = (task) => {
-    console.log(task)
     const newArrayTasks = [...arrayTasks]
     const index = newArrayTasks.findIndex((ele) => ele.name === task.name)
-    console.log(index, task.name)
-
     newArrayTasks[index].complete = true
     setArrayTasks(newArrayTasks)
+  }
+
+  const deleteTask = (task) => {
+    const newArrayTasks = [...arrayTasks]
+    const filterArray = newArrayTasks.filter((ele) => ele.name !== task.name)
+    setArrayTasks(filterArray)
   }
 
   return (
@@ -59,6 +62,9 @@ const Tasks = () => {
                 Complete
               </button>
             ) : null}
+            <button onClick={() => deleteTask(task)} className={styleButton}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>
