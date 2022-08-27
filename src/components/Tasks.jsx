@@ -50,7 +50,6 @@ const Tasks = () => {
         {arrayTasks.map((task) => (
           <li
             className="text-lg font-medium p-1"
-            // onClick={() => console.log(task)}
             key={task.name}
             style={
               task.complete === true ? { textDecoration: "line-through" } : {}

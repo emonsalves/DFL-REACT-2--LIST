@@ -1,6 +1,10 @@
+import Navbar from "../components/Navbar"
+
 function Header() {
   return (
-    <div>Header</div>
+    <>
+    <Navbar/>
+    </>
   )
 }
 

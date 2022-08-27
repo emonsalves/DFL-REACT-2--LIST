@@ -1,6 +1,10 @@
+import Form from "../components/Form"
+
 function Section() {
   return (
-    <div>Section</div>
+    <>
+    <Form/>
+    </>
   )
 }
 
