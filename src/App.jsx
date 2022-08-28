@@ -11,13 +11,13 @@ function App() {
   const [email, setEmail] = useState("")
 
   // const filterArray = dbPersonal.filter((e)=> e.id !== 2)
-  console.log(arrayDb[1])
+  // console.log(arrayDb[1])
 
   return (
     <div className="App">
       <Header />
       <Section />
-      <Footer />
+      <Footer arrayDb= {arrayDb} setArrayDb={setArrayDb} />
     </div>
   )
 }
