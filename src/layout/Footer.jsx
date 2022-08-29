@@ -22,7 +22,7 @@ function Footer({ arrayDb, setArrayDb }) {
           <tbody>
             {arrayDb.map((slot) => (
               <tr
-                key={slot.nombre}
+                key={slot.name}
                 className="bg-white border-b dark:bg-gray-400 dark:border-gray-500
                           text-black"
               >
@@ -33,8 +33,8 @@ function Footer({ arrayDb, setArrayDb }) {
                 >
                   {slot.id}
                 </th>
-                <td className="py-2 px-2">{slot.nombre}</td>
-                <td className="py-2 px-2">{slot.correo}</td>
+                <td className="py-2 px-2">{slot.name}</td>
+                <td className="py-2 px-2">{slot.mail}</td>
                 {/* <td className="py-4 px-6">
                             <a
                               href="#"

@@ -16,8 +16,15 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Section />
-      <Footer arrayDb= {arrayDb} setArrayDb={setArrayDb} />
+      <Section
+        arrayDb={arrayDb}
+        setArrayDb={setArrayDb}
+        namePersonal={namePersonal}
+        setNamePersonal={setNamePersonal}
+        email={email}
+        setEmail={setEmail}
+      />
+      <Footer arrayDb={arrayDb} setArrayDb={setArrayDb} />
     </div>
   )
 }
