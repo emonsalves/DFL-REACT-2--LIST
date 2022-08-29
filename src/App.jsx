@@ -10,13 +10,17 @@ function App() {
   const [namePersonal, setNamePersonal] = useState("")
   const [email, setEmail] = useState("")
   const [search, setSearch] = useState("")
-
-  // const filterArray = dbPersonal.filter((e)=> e.id !== 2)
-  // console.log(arrayDb[1])
+  const [btnSearch, setBtnSearch] = useState(false)
 
   return (
     <div className="App">
-      <Header search={search} setSearch={setSearch} arrayDb={arrayDb}/>
+      <Header
+        search={search}
+        setSearch={setSearch}
+        arrayDb={arrayDb}
+        btnSearch={btnSearch}
+        setBtnSearch={setBtnSearch}
+      />
       <Section
         arrayDb={arrayDb}
         setArrayDb={setArrayDb}
@@ -24,8 +28,15 @@ function App() {
         setNamePersonal={setNamePersonal}
         email={email}
         setEmail={setEmail}
+        setBtnSearch={setBtnSearch}
       />
-      <Footer arrayDb={arrayDb} setArrayDb={setArrayDb} />
+      <Footer
+        arrayDb={arrayDb}
+        setArrayDb={setArrayDb}
+        search={search}
+        btnSearch={btnSearch}
+        setBtnSearch={setBtnSearch}
+      />
     </div>
   )
 }

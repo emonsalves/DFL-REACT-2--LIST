@@ -1,4 +1,7 @@
-function Footer({ arrayDb, setArrayDb }) {
+function Footer({ arrayDb, search, btnSearch}) {
+
+  const filterArray = arrayDb.filter((item) => item.name.toUpperCase() === search.toUpperCase())
+
   return (
     <>
       <div className="mt-6 overflow-x-auto relative shadow-md sm:rounded-lg">
@@ -14,37 +17,44 @@ function Footer({ arrayDb, setArrayDb }) {
               <th scope="col" className="py-2 px-2">
                 Correo
               </th>
-              {/* <th scope="col" className="py-3 px-6">
-                Acciones
-              </th> */}
             </tr>
           </thead>
           <tbody>
-            {arrayDb.map((slot) => (
-              <tr
-                key={slot.name}
-                className="bg-white border-b dark:bg-gray-400 dark:border-gray-500
+            {btnSearch === false
+              ? arrayDb.map((slot) => (
+                  <tr
+                    key={slot.name}
+                    className="bg-white border-b dark:bg-gray-400 dark:border-gray-500
                           text-black"
-              >
-                <th
-                  scope="row"
-                  className="py-4 px-6 font-medium whitespace-nowrap
+                  >
+                    <th
+                      scope="row"
+                      className="py-4 px-6 font-medium whitespace-nowrap
                             text-black"
+                    >
+                      {slot.id}
+                    </th>
+                    <td className="py-2 px-2">{slot.name}</td>
+                    <td className="py-2 px-2">{slot.mail}</td>
+                  </tr>
+                ))
+              : filterArray.map((slot) => (
+                <tr
+                  key={slot.name}
+                  className="bg-white border-b dark:bg-gray-400 dark:border-gray-500
+                        text-black"
                 >
-                  {slot.id}
-                </th>
-                <td className="py-2 px-2">{slot.name}</td>
-                <td className="py-2 px-2">{slot.mail}</td>
-                {/* <td className="py-4 px-6">
-                            <a
-                              href="#"
-                              className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                            >
-                              Edit
-                            </a>
-                          </td> */}
-              </tr>
-            ))}
+                  <th
+                    scope="row"
+                    className="py-4 px-6 font-medium whitespace-nowrap
+                          text-black"
+                  >
+                    {slot.id}
+                  </th>
+                  <td className="py-2 px-2">{slot.name}</td>
+                  <td className="py-2 px-2">{slot.mail}</td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
