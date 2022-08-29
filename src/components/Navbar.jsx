@@ -1,24 +1,19 @@
-function Navbar({ search, setSearch, arrayDb }) {
-  const searchPersonal = () => {
-    const filterArrayDb = arrayDb.filter((item) => item.name === search)
-    filterArrayDb[0] !== undefined
-      ? filterArrayDb.map((slot) =>
-          alert(
-            "Persona encontrada los datos son los siguientes: " +
-              " - Id : " +
-              slot.id +
-              " - Nombre : " +
-              slot.name +
-              " - Email : " +
-              slot.mail
-          )
-        )
-      : alert("Persona no encontrada")
+function Navbar({ search, setSearch, setBtnSearch, arrayDb }) {
+  const searchPersonal = (e) => {
+    const filterArray = arrayDb.filter(
+      (item) => item.name.toUpperCase() === search.toUpperCase()
+    )
+    filterArray[0] === undefined
+      ? alert("Persona no encontrada")
+      : setBtnSearch(true)
+    document.getElementById("default-search").focus()
   }
 
   const captureSearch = (e) => {
     setSearch(e.target.value)
+    setBtnSearch(false)
   }
+
   return (
     <div className="relative">
       <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
@@ -49,6 +44,7 @@ function Navbar({ search, setSearch, arrayDb }) {
         value={search}
       />
       <button
+        // onClick={searchPersonal}
         onClick={searchPersonal}
         type="button"
         className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"

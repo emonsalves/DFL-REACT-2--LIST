@@ -7,38 +7,54 @@ function Form({
   setNamePersonal,
   email,
   setEmail,
-  serch,
-  setSerch
+  setBtnSearch,
 }) {
   const submitForm = (e) => {
     e.preventDefault()
-    checkName() === true && checkEmail() === true
-      ? alert("Campos vacios favor de ingresar su nombre y email")
+
+    checkName() === true || checkEmail() === true || checkPersonal() === true
+      ? null
       : setArrayDb([
           ...arrayDb,
           { id: arrayDb.length + 1, name: namePersonal, mail: email },
         ]),
       setNamePersonal(""),
       setEmail("")
+    document.getElementById("input").focus()
   }
 
   const captureNamePersonal = (e) => {
     setNamePersonal(e.target.value)
+    setBtnSearch(false)
   }
 
   const captureEmail = (e) => {
     setEmail(e.target.value)
+    setBtnSearch(false)
   }
 
   const checkName = () => {
     let check = false
-    namePersonal === "" ? (check = true) : (check = false)
+    namePersonal === ""
+      ? ((check = true), alert("Error nombre vacio"))
+      : (check = false)
     return check
   }
 
   const checkEmail = () => {
     let check = false
-    email === "" ? (check = true) : (check = false)
+    email === ""
+      ? ((check = true), alert("Error email vacio"))
+      : (check = false)
+    return check
+  }
+
+  const checkPersonal = () => {
+    let check = arrayDb
+      .map((slot) => slot.name.toUpperCase())
+      .includes(namePersonal.toUpperCase())
+
+    check === true ? alert("Error la persona ya esta registrada") : null
     return check
   }
 

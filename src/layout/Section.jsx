@@ -6,7 +6,8 @@ function Section({
   namePersonal,
   setNamePersonal,
   email,
-  setEmail
+  setEmail,
+  setBtnSearch
 }) {
   return (
     <>
@@ -17,6 +18,7 @@ function Section({
         setNamePersonal={setNamePersonal}
         email={email}
         setEmail={setEmail}
+        setBtnSearch={setBtnSearch}
       />
     </>
   )
