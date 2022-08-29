@@ -6,7 +6,7 @@ function Section({
   namePersonal,
   setNamePersonal,
   email,
-  setEmail,
+  setEmail
 }) {
   return (
     <>

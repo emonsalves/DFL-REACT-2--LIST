@@ -7,6 +7,8 @@ function Form({
   setNamePersonal,
   email,
   setEmail,
+  serch,
+  setSerch
 }) {
   const submitForm = (e) => {
     e.preventDefault()

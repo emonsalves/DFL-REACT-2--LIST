@@ -1,9 +1,9 @@
 import Navbar from "../components/Navbar"
 
-function Header() {
+function Header({ search, setSearch, arrayDb}) {
   return (
     <>
-    <Navbar/>
+      <Navbar search={search} setSearch={setSearch} arrayDb={arrayDb} />
     </>
   )
 }
