@@ -6,4 +6,6 @@ unos datos entregados, donde adicionalmente se pueda agregar colaboradores nuevo
 filtrar la lista de resultados a partir de una barra de búsqueda que filtre en función del
 nombre del colaborador.
 
-Guia de estudio -> https://emonsalvesreactlist.netlify.app
+Guia de estudio realizada -> https://emonsalvesreactlist.netlify.app
+
+Desafio realizado -> https://emonsalveslistreact.netlify.app
